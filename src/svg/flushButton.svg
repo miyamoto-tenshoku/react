@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="636.15643"
+   height="757.58527"
+   viewBox="0 0 636.1564 757.58523"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlnsSvg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath18">
+      <path
+         d="M 0,800 H 800 V 0 H 0 Z"
+         id="path16" />
+    </clipPath>
+  </defs>
+  <g
+     id="g10"
+     transform="matrix(1.3333333,0,0,-1.3333333,-215.25585,912.12571)">
+    <g
+       id="g12"
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99975;stroke-dasharray:none;stroke-opacity:1">
+      <g
+         id="g14"
+         clip-path="url(#clipPath18)"
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99975;stroke-dasharray:none;stroke-opacity:1">
+        <g
+           id="g20"
+           transform="translate(322.8315,115.9053)"
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99975;stroke-dasharray:none;stroke-opacity:1">
+          <path
+             d="m 0,0 v 63.237 c 0,20.692 -12.36,39.383 -31.402,47.482 -38.685,16.455 -70.584,40.129 -92.245,68.462 -20.328,26.587 -31.074,56.84 -31.074,87.485 H 229.352 V 0 Z"
+             style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.99975;stroke-dasharray:none;stroke-opacity:1"
+             id="path22" />
+        </g>
+        <g
+           id="g24"
+           transform="translate(637.6299,672.6143)"
+           style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.99975;stroke-dasharray:none;stroke-opacity:1">
+          <path
+             d="m 0,0 c -1.472,4.293 -4.529,7.756 -8.604,9.748 -2.349,1.149 -4.857,1.732 -7.458,1.732 -6.544,0 -12.397,-3.651 -15.271,-9.528 l -71.936,-235.926 h -355.928 c -9.369,0 -16.991,-7.622 -16.991,-16.991 0,-9.368 7.622,-16.99 16.991,-16.99 H -93.43 c 0.127,0 0.249,0.016 0.374,0.017 0.13,-0.001 0.254,-0.021 0.384,-0.021 6.545,0 12.397,3.651 15.272,9.528 L -0.807,-12.979 C 1.187,-8.903 1.474,-4.293 0,0"
+             style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.99975;stroke-dasharray:none;stroke-opacity:1"
+             id="path26" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

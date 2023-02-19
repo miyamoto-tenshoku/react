@@ -1,12 +1,19 @@
 import './App.css';
+import './FlushAnimation.css';
 import { useState, useRef, useEffect } from 'react';
-import { useHotkeys } from 'react-hotkeys-hook'
+import { useHotkeys } from 'react-hotkeys-hook';
+import FlushAnimation from './FlushAnimation';
+import sendButtonSvg from './svg/sendButton.svg';
 
 function App() {
-  const [logs, setLogs] = useState<string[]>([]);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const scrollEndRef = useRef<HTMLDivElement>(null);
   const ulRef = useRef<HTMLUListElement>(null);
+  const [logs, setLogs] = useState<string[]>([]);
+
+  function resetLogs(){
+    setLogs([]);
+  }
 
   //チャット送信のショートカットキーを設定
   useHotkeys('ctrl+enter', addLog, { enableOnFormTags: ['textarea'] });
@@ -32,26 +39,30 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-log">
-        <ul ref={ulRef}>
-          { logs.map((value, index) => {
-              return(
-                <li key={index}>{value}</li>
-              )
-          })}
-        </ul>
-        <div ref={scrollEndRef} />
-      </div>
+      <FlushAnimation logs={logs} resetLogs={resetLogs} />
+      <div className='App-grid'>
+        <div className="App-log">
+          <ul ref={ulRef}>
+            { logs.map((value, index) => {
+                return(
+                  <li key={index}>{value}</li>
+                )
+            })}
+          </ul>
+          <div ref={scrollEndRef} />
+        </div>
 
-      <div className='App-operationBoard'>
-        {/* <FlushAnimation /> */}
-      </div>
+        <div className='App-operationBoard'>
+        </div>
 
-      <textarea ref={textareaRef} ></textarea>
-      <button type="button" onClick={addLog}>送信</button>
+        <textarea className='App-textarea' ref={textareaRef} ></textarea>
+        <button className='App-sendButton' type="button" onClick={addLog}>
+            <img src={sendButtonSvg} alt="sendButtonSvg" />
+        </button>
 
-      <div className='App-note'>
-        ctrl+enter
+        <div className='App-note'>
+          ctrl+enter
+        </div>
       </div>
     </div>
   );
