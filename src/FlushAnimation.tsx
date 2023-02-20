@@ -1,20 +1,28 @@
+import { useState } from 'react';
 import { motion, useAnimationControls} from "framer-motion";
 import './FlushAnimation.css';
 import flushButtonSvg from './svg/flushButton.svg';
 import wsveSvg from './svg/wave.svg'
+import flushMp3 from './mp3/flushSound.mp3';
 
 interface Props {
   logs: string[];
-  resetLogs: () => void;
+  clear_logs: () => void;
 }
 
 function FlushAnimation(props: Props) {
-  const wave_controls = useAnimationControls()
-  const log_controls = useAnimationControls()
-  const bg_controls = useAnimationControls()
 
+  const waveControls = useAnimationControls();
+  const logControls = useAnimationControls();
+  const bgControls = useAnimationControls();
+  const flushSound = new Audio(flushMp3);
+
+  //アニメーションの開始、終了の状態を保持
+  const [startAnimation, set_sartAnimation] = useState<boolean>(false);
+
+  //ログが画面上部から下りてくるアニメーションの処理
   const log_sequence = async () => {
-    bg_controls.start({
+    bgControls.start({
         clipPath: `circle(${window.innerHeight * 2}px at right 27px bottom 120px)`,
         transition: {
           type: "spring",
@@ -24,18 +32,18 @@ function FlushAnimation(props: Props) {
       }
     );
 
-    await log_controls.start({
+    await logControls.start({
       top: "100%",
       transition: {
         duration: 6,
         ease: "linear",
         delay: 0.5
       }
-    })
+    });
 
-    await log_controls.start({ display: "none"})
-    props.resetLogs();
-    bg_controls.start({
+    await logControls.start({ display: "none"})
+    props.clear_logs();
+    bgControls.start({
         clipPath: "circle(25px at right 27px bottom 120px)",
         transition: {
           type: "easeIn",
@@ -43,7 +51,7 @@ function FlushAnimation(props: Props) {
       }
     );
 
-    return await log_controls.start({
+    return await logControls.start({
       top: "",
       transition: {
         duration: 1,
@@ -52,13 +60,14 @@ function FlushAnimation(props: Props) {
       transitionEnd: {
         display: "block",
       }
-    })
+    });
   }
 
+  //波がが画面下部からせりあがってくるアニメーションの処理
   const wave_sequence = async () => {
-    await wave_controls.start({height: "300px"});
+    await waveControls.start({height: "300px"});
 
-    await wave_controls.start({
+    await waveControls.start({
       top: "70%",
       transition: {
         duration: 1,
@@ -66,7 +75,7 @@ function FlushAnimation(props: Props) {
       }
     });
 
-    await wave_controls.start({
+    await waveControls.start({
       top: ["70%", "80%", "70%"],
       transition: {
         repeat: 2,
@@ -75,29 +84,34 @@ function FlushAnimation(props: Props) {
       }
     });
 
-    return await wave_controls.start({
+    await waveControls.start({
       top: "100%",
       transition: { duration: 2 }
     });
+
+    set_sartAnimation(false);
   }
 
   return (
     <>
-      <motion.div className='Animation-background'
+      <motion.div animate={bgControls}
+        className='Animation-background'
         initial={{ clipPath: "circle(25px at right 27px bottom 120px)"}}
-        animate={bg_controls}
       />
 
       <button
         className='Animation-flushButton' type="button"
+        disabled={startAnimation}
         onClick= {() => {
+          set_sartAnimation(true);
+          flushSound.play();
           log_sequence();
           wave_sequence();
         }}
       ><img src={flushButtonSvg} alt="flushButton" /></button>
 
       <motion.div className='Animation-log'
-        animate={log_controls}
+        animate={logControls}
         initial={{ bottom: "100%"}}
       >
         <ul>
@@ -111,7 +125,7 @@ function FlushAnimation(props: Props) {
 
       <motion.img className='Animation-wave'
         src={wsveSvg}
-        animate={wave_controls}
+        animate={waveControls}
         initial={{ top: "100%"}}
       />
 

@@ -1,11 +1,11 @@
 .Animation-background{
+  position: absolute;
   left: 0;
   right: 0;
   top: 0;
   bottom: 0;
-  position: absolute;
-  background-color: #035AA6;
   z-index: 40;
+  background-color: #035AA6;
 }
 
 .Animation-flushButton{
