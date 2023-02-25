@@ -39,3 +39,9 @@
   margin-right: auto;
   z-index: 100;
 }
+
+@media screen and (max-width: 500px) {
+  .Animation-log {
+    width: 85%;
+  }
+}

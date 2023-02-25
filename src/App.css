@@ -6,7 +6,7 @@
 
 .App {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -89,4 +89,10 @@ li{
 
 .App-note-disabled{
   color: rgb(193, 193, 193);
+}
+
+@media screen and (max-width: 500px) {
+  .App {
+    width: 100%;
+  }
 }
