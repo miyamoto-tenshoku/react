@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/react/static/css/main.89e6c7ae.css",
+    "main.js": "/react/static/js/main.778936ac.js",
+    "static/js/787.f367a1f6.chunk.js": "/react/static/js/787.f367a1f6.chunk.js",
+    "static/media/flushSound.mp3": "/react/static/media/flushSound.1fa3f9372de8c68a452e.mp3",
+    "static/media/wave.svg": "/react/static/media/wave.6b18cbe590188ae6e8d15bdf05b70d58.svg",
+    "static/media/flushButton.svg": "/react/static/media/flushButton.6eabeffd9d084ffc7702d2b581d643cd.svg",
+    "static/media/sendButton.svg": "/react/static/media/sendButton.8e0c9210ca4ed890174fd389e25dea2b.svg",
+    "index.html": "/react/index.html",
+    "main.89e6c7ae.css.map": "/react/static/css/main.89e6c7ae.css.map",
+    "main.778936ac.js.map": "/react/static/js/main.778936ac.js.map",
+    "787.f367a1f6.chunk.js.map": "/react/static/js/787.f367a1f6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.89e6c7ae.css",
+    "static/js/main.778936ac.js"
+  ]
+}
